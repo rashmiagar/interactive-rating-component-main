@@ -1,49 +1,178 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+<html>
+    <head>
+        <title>Component</title>
+        <link href="https://cdn.jsdelivr.net/npm/@fontsource/overpass@5.0.8/index.min.css" rel="stylesheet">
+        <style>
+            html, body, div, p {
+                box-sizing: border-box;
+                margin: 0px;
+                padding: 0px;
+            }
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Interactive rating component</title>
+            html, body {
+                width: 100%;
+                height: 100%;
+                font-family: overpass;
+            }
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+            body {
+                background-color: #141519;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
 
-  <!-- Rating state start -->
+            .rating-card, .thank-you-container {
+                background-image: radial-gradient(ellipse at top, #222933 0, #171e28 100%);
+                background-color: #222933;
+                height: 420px;
+                width: 420px;
+             /*   width: 50%;
+                height: 50%;*/
+                border-radius: 30px;
+                padding: 30px;
+                display: flex;
+                flex-direction: column;
+            }
 
-  How did we do?
+            @media
 
-  Please let us know how we did with your support request. All feedback is appreciated 
-  to help us improve our offering!
+            .thank-you-container {
+              text-align: center;
+            }
+            .thank-you-container p {
+                width: fit-content;
+                margin-left: auto;
+                margin-right: auto;
+                border-radius: 20px;
+            }
+            .thank-you-container img {
+              margin: auto;
+            }
 
-  1 2 3 4 5
+            .gray-circle {
+                background-color: #272e38;
+                width: 45px;
+                height: 45px;
+                border-radius: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: background-color 0.5s;
+            }
 
-  Submit
+            .star-container {
 
-  <!-- Rating state end -->
+            }
 
-  <!-- Thank you state start -->
+            .title-text {
+                font-weight: 400;
+                color: white;
+                padding-top: 35px;
+                font-size: 28px;
+            }
 
-  You selected <!-- Add rating here --> out of 5
+            .subtitle {
+                color: hsl(217, 12%, 63%);
+                font-size: 14px;
+                line-height: 24px;
+            }
 
-  Thank you!
+            .rating-container {
+                display: flex;
+                flex-direction: row;
+                justify-content:space-between;
+                color:hsl(217, 12%, 63%);
+                padding-top: 30px;
+            }
 
-  We appreciate you taking the time to give a rating. If you ever need more support, 
-  don’t hesitate to get in touch!
+            .rating-container .gray-circle:hover {
+                background-color: hwb(25 7% 2%);
+                color: white;
+                cursor: pointer;
+            }
 
-  <!-- Thank you state end -->
+            .gray-background {
+              background-color: #272e38;
+              border-radius: 50%;
+              color: hwb(25 7% 2%);
+              padding: 10px 20px;
+              margin-top: 40px;
+            }
 
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+            .primary-btn {
+                margin-top: 30px;
+                padding-top: 16px;
+                padding-bottom: 16px;
+                background-color: hsl(25, 97%, 53%);
+                border-radius: 25px;
+                width: 100%;
+                text-align: center;
+                color: white;
+                letter-spacing: .2em;
+                font-weight: 600;
+                cursor: pointer;
+                transition: background-color 0.5s;
+            }
+
+            .primary-btn:hover {
+                box-shadow: inset 0 0 10px rgb(140,140,140);
+                background-color: hsl(0, 0%, 100%);
+                color: hsl(25, 97%, 53%);
+            }
+
+            .hide {
+              display: none;
+            }
+
+            input[type="radio"] {
+              opacity: 0;
+            }
+
+            input[type="radio"]:checked + label {
+              background-color: #fff;
+            }
+
+        </style>
+        <script src="./script.js" defer></script>
+    </head>
+    <body>
+        <div class="rating-card">
+            <div class="star-container gray-circle">
+              <img src="./images/icon-star.svg" />
+            </div>
+
+            <div class="title-text">
+                How did we do?
+            </div>
+
+            <p class="subtitle">
+                Please let us know how we did with your support request. All feedback is appreciated
+                to help us improve our offering!
+            </p>
+
+            <div class="rating-container">
+                <input type="radio" id="radio1" name="radioRating" value=1 />
+                <label class="gray-circle" for="radio1">1</label>
+                <input type="radio" id="radio2" name="radioRating" value=2 />
+                <label class="gray-circle" for="radio2">2</label>
+                <input type="radio" id="radio3" name="radioRating" value=3 /><label class="gray-circle" for="radio3">3</label>
+                <input type="radio" id="radio4" name="radioRating" value=4 /><label class="gray-circle" for="radio4">4</label>
+                <input type="radio" id="radio5" name="radioRating" value=5 /><label class="gray-circle" for="radio5">5</label>
+            </div>
+
+
+            <button class="primary-btn submit-button">
+                SUBMIT
+            </button>
+        </div>
+
+        <div class="thank-you-container hide">
+          <img src="./images/illustration-thank-you.svg" width="50%" />
+          <p class="gray-background">You selected 4 out of 5</p>
+          <h2 style="color: #fff">Thank you!</h2>
+          <span class="subtitle">We appreciate you taking the time to give a rating.</span>
+          <span class="subtitle">If you ever need more support, don't hesitate to get in touch!</span>
+        </div>
+    </body>
 </html>
