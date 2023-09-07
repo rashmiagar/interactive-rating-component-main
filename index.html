@@ -22,12 +22,18 @@
                 justify-content: center;
             }
 
+            @media only screen and (min-width: 265) and (max-width: 604px)  {
+              .rating-card, .thank-you-container {
+                width: 90vw;
+                height: 90vw;
+              }
+            }
+
             .rating-card, .thank-you-container {
                 background-image: radial-gradient(ellipse at top, #222933 0, #171e28 100%);
                 background-color: #222933;
-                height: 420px;
-                width: 420px;
-             /*   width: 50%;
+
+              /*  width: 50%;
                 height: 50%;*/
                 border-radius: 30px;
                 padding: 30px;
@@ -35,7 +41,12 @@
                 flex-direction: column;
             }
 
-            @media
+             @media only screen and (min-width: 605px)  {
+              .rating-card, .thank-you-container {
+                max-width: 420px;
+                height: 420px;
+              }
+            }
 
             .thank-you-container {
               text-align: center;
