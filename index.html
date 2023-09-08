@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>Component</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/@fontsource/overpass@5.0.8/index.min.css" rel="stylesheet">
         <style>
             html, body, div, p {
@@ -22,28 +23,21 @@
                 justify-content: center;
             }
 
-            @media only screen and (min-width: 265) and (max-width: 604px)  {
-              .rating-card, .thank-you-container {
-                width: 90vw;
-                height: 90vw;
-              }
-            }
-
             .rating-card, .thank-you-container {
                 background-image: radial-gradient(ellipse at top, #222933 0, #171e28 100%);
                 background-color: #222933;
-
-              /*  width: 50%;
-                height: 50%;*/
+                width: 80vw;
+                height: 80vw;
                 border-radius: 30px;
                 padding: 30px;
                 display: flex;
                 flex-direction: column;
+                justify-content: space-evenly;
             }
 
              @media only screen and (min-width: 605px)  {
               .rating-card, .thank-you-container {
-                max-width: 420px;
+                width: 420px;
                 height: 420px;
               }
             }
